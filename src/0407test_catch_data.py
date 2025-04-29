@@ -1,7 +1,7 @@
 from bs4 import BeautifulSoup
 
 # 讀取 HTML 檔案
-with open('C:/Users/User/PycharmProjects/autotest1/Diabetes_page_content/facebook_page_11.html', 'r',
+with open('C:/Users/User/PycharmProjects/autotest1/Diabetes_page_content_1/facebook_page_11.html', 'r',
           encoding='utf-8') as file:
     html = file.read()
 
