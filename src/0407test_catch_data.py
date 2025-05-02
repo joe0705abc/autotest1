@@ -1,7 +1,7 @@
 from bs4 import BeautifulSoup
 
 # 讀取 HTML 檔案
-with open('C:/Users/User/PycharmProjects/autotest1/Diabetes_page_content_1/facebook_page_11.html', 'r',
+with open('C:/Users/User/PycharmProjects/autotest1/Diabetes_page_content_1/facebook_page_17.html', 'r',
           encoding='utf-8') as file:
     html = file.read()
 
@@ -10,6 +10,7 @@ soup = BeautifulSoup(html, 'lxml')
 
 # 抓出所有貼文容器（非常精確）
 posts = soup.select('div.x1yztbdb.x1n2onr6.xh8yej3.x1ja2u2z')
+#x1yztbdb x1n2onr6 xh8yej3 x1ja2u2z
 already_seen_texts = set()
 
 # 逐一處理每篇貼文
