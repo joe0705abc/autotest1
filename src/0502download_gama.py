@@ -28,7 +28,7 @@ driver = webdriver.Edge(service=edge_service, options=edge_options)
 url = "https://www.facebook.com/groups/diabetic99"
 
 # 儲存路徑
-save_dir = r"C:\Users\User\PycharmProjects\autotest1\Diabetes_page_content_3"
+save_dir = r"C:\Users\User\PycharmProjects\autotest1\Diabetes_page_content_4"
 os.makedirs(save_dir, exist_ok=True)
 
 count = 1
@@ -55,30 +55,34 @@ def login():
     print("✅ 成功登入！")
     return wait
 
+def download_file(raw_html):
+    global count
+    file_name = os.path.join(save_dir, f"facebook_page_{count}.html")
+    with open(file_name, "w", encoding="utf-8") as file:
+        file.write(raw_html)
+    print(f"✅ 第 {count} 次 HTML 已儲存：{file_name}")
+    count += 1
+
+
 try:
     wait = login()
     print("🛑 請滾動到你要開始爬的日期附近")
-    print("➡️ 按 F8：只點擊『查看更多』並滾動一次（用於手動探索）")
-    print("➡️ 按 F9：開始自動爬蟲")
+    print("➡️ 按 f9：下載")
+
 
 
 
     # 🧠 自動爬蟲主迴圈
     while True:
-        print(f"🔄 第 {count} 輪開始")
-        raw_html = driver.page_source
-        if keyboard.is_pressed("a"):
-            print("✅ 偵測到 a，開始下載")
-            file_name = os.path.join(save_dir, f"facebook_page_{count}.html")
-            with open(file_name, "w", encoding="utf-8") as file:
-                file.write(raw_html)
-            print(f"✅ 第 {count} 次 HTML 已儲存：{file_name}")
+        while keyboard.is_pressed("f9"):
+            print("✅ 偵測到 f9，開始下載")
+            raw_html = driver.page_source
+            download_file(raw_html)
 
         if count % 10 == 0:
             gc.collect()
             print("✅ 清除記憶體")
-        count += 1
-        time.sleep(1.5)  # 加這行避免重複儲存多次
+
 
 
 except KeyboardInterrupt:
