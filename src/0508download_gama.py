@@ -79,9 +79,6 @@ try:
             raw_html = driver.page_source
             download_file(raw_html)
 
-        if count % 10 == 0:
-            gc.collect()
-            print("✅ 清除記憶體")
 
 
 
