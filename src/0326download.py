@@ -29,7 +29,7 @@ driver = webdriver.Edge(service=edge_service, options=edge_options)
 url = "https://www.facebook.com/groups/diabetic99"
 
 # 設定儲存目錄
-save_dir = r"C:\Users\User\PycharmProjects\autotest1\Diabetes_page_content_1"
+save_dir = r""
 os.makedirs(save_dir, exist_ok=True)
 
 # 防止休眠
