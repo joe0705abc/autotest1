@@ -84,7 +84,6 @@ try:
     print("➡️ 按 F7：開始滾動")
     print("➡️ 按 F8：停止滾動")
     print("➡️ 按 F9：儲存目前畫面 HTML")
-    print("➡️ 按 F10：結束程式")
 
 
     # 主迴圈 - 鍵盤控制
@@ -102,9 +101,6 @@ try:
         elif keyboard.is_pressed("f9"):
             save_html()
 
-        elif keyboard.is_pressed("f10"):
-            print("🛑 結束程式")
-            break
 
 except KeyboardInterrupt:
     print("❌ 手動中止程式")
