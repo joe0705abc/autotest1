@@ -48,7 +48,7 @@ def auto_scroll_loop():
     while True:
         if scrolling:
             print("⬇️ 自動滾動中...")
-            driver.execute_script("window.scrollBy(0, 1000);")
+            driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
             time.sleep(2)
         else:
             time.sleep(0.2)
@@ -102,7 +102,6 @@ try:
 
         elif keyboard.is_pressed("f9"):
             save_html()
-            time.sleep(1)
 
         elif keyboard.is_pressed("f10"):
             print("🛑 結束程式")
