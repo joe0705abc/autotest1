@@ -52,6 +52,8 @@ def auto_scroll_loop():
             time.sleep(2)
         else:
             time.sleep(0.2)
+# 開始滾動執行緒
+threading.Thread(target=auto_scroll_loop, daemon=True).start()
 
 # 手動儲存 HTML 畫面
 def save_html():
@@ -84,9 +86,6 @@ try:
     print("➡️ 按 F9：儲存目前畫面 HTML")
     print("➡️ 按 F10：結束程式")
 
-    # 開始滾動執行緒
-    scroll_thread = threading.Thread(target=auto_scroll_loop, daemon=True)
-    scroll_thread.start()
 
     # 主迴圈 - 鍵盤控制
     while True:
