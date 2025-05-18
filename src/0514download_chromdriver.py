@@ -15,7 +15,7 @@ from selenium.webdriver.common.keys import Keys
 from bs4 import BeautifulSoup
 # 設定程式輸出為 UTF-8
 
-chrome_service = ChromeService(executable_path="C:/Users/CCU/PycharmProjects/PythonProject/chromedriver_win32/chromedriver.exe")
+chrome_service = ChromeService()
 chrome_options = ChromeOptions()
 chrome_options.add_argument('--start-maximized')
 
